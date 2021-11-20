@@ -1,6 +1,7 @@
-import 'package:desafio/core/types.dart';
-import 'package:desafio/modules/apod_module/domain/entities/query_apod_entity.dart';
+import 'package:desafio/modules/apod_module/domain/entities/apod_entity.dart';
+import 'package:desafio/modules/apod_module/infra/models/apod_external.dart';
 
 abstract class ApodRepository {
-  Future<Json> getApod(QueryApodEntity query);
+  Future<List<ApodEntity>> getApodList(String query);
+  Future<ApodEntity> getApod(String query);
 }

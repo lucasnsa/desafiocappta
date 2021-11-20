@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:http/http.dart';
 
 class CustomHttpClient {
@@ -13,6 +11,6 @@ class CustomHttpClient {
       'https://api.nasa.gov/planetary/apod?api_key=$_apiKey';
 
   Future<Response> get(String query) {
-    return _httpClient.get(Uri.parse('$_apiEndPoint$query'));
+    return _httpClient.get(Uri.parse('$_apiEndPoint&date=$query'));
   }
 }

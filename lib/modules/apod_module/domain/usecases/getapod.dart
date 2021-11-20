@@ -1,10 +1,8 @@
-import 'package:desafio/modules/apod_module/domain/entities/query_apod_entity.dart';
-
-import 'package:desafio/core/types.dart';
+import 'package:desafio/modules/apod_module/domain/entities/apod_entity.dart';
 import 'package:desafio/modules/apod_module/domain/repositories/apod_repository.dart';
 
 mixin GetApod {
-  Future<Json> call(QueryApodEntity query);
+  Future<ApodEntity> call(String query);
 }
 
 class GetApodImpl implements GetApod {
@@ -13,7 +11,7 @@ class GetApodImpl implements GetApod {
   GetApodImpl(this._repository);
 
   @override
-  Future<Json> call(QueryApodEntity query) {
+  Future<ApodEntity> call(String query) async {
     return _repository.getApod(query);
   }
 }
