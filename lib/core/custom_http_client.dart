@@ -1,5 +1,7 @@
 import 'package:http/http.dart';
 
+/// Implementa um Client da lib [http](https://pub.dev/http)
+/// Usada como bypass para hidratar apikey e query
 class CustomHttpClient {
   final Client _httpClient;
 

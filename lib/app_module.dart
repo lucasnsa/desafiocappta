@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:desafio/core/custom_http_client.dart';
 import 'package:desafio/modules/apod_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';

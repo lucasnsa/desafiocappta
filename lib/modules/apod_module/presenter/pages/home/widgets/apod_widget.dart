@@ -1,6 +1,8 @@
 import 'package:desafio/modules/apod_module/domain/entities/apod_entity.dart';
 import 'package:flutter/material.dart';
 
+/// Widget que renderiza a Imagem do Dia com titulo e descrição
+/// Parametro [entity] é requirido.
 class ApodWidget extends StatelessWidget {
   final ApodEntity entity;
   const ApodWidget({Key? key, required this.entity}) : super(key: key);

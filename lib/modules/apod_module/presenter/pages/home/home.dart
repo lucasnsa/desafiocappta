@@ -14,6 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Store/Controller da Page
   final store = Modular.get<HomeStore>();
 
   @override
@@ -56,6 +57,12 @@ class _HomePageState extends State<HomePage> {
                     loading: (fromDate) =>
                         const CircularProgressIndicator.adaptive(),
                     showAPOD: (object, fromDate) => ApodWidget(entity: object),
+                    error: (failure) => SizedBox.fromSize(
+                      size: const Size.fromHeight(250),
+                      child: const Center(
+                        child: Text('Ocorreu um erro.'),
+                      ),
+                    ),
                   );
                 },
               ),
