@@ -12,17 +12,33 @@ class ApodEntity {
   final String copyright;
   final String serviceVersion;
 
-  ApodEntity(
-      this.resource,
-      this.conceptTags,
-      this.title,
-      this.date,
-      this.url,
-      this.hdurl,
-      this.mediaType,
-      this.explanation,
-      this.concepts,
-      this.thumbnailUrl,
-      this.copyright,
-      this.serviceVersion);
+  ApodEntity({
+    required this.resource,
+    required this.conceptTags,
+    required this.title,
+    required this.date,
+    required this.url,
+    required this.hdurl,
+    required this.mediaType,
+    required this.explanation,
+    required this.concepts,
+    required this.thumbnailUrl,
+    required this.copyright,
+    required this.serviceVersion,
+  });
+
+  factory ApodEntity.empty() => ApodEntity(
+        resource: '',
+        conceptTags: true,
+        title: '',
+        date: DateTime.now(),
+        url: '',
+        hdurl: '',
+        mediaType: '',
+        explanation: '',
+        concepts: '',
+        thumbnailUrl: '',
+        copyright: '',
+        serviceVersion: '',
+      );
 }

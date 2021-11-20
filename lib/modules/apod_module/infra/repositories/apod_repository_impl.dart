@@ -1,5 +1,4 @@
-import 'package:desafio/modules/apod_module/domain/entities/query_apod_entity.dart';
-import 'package:desafio/core/types.dart';
+import 'package:desafio/modules/apod_module/domain/entities/apod_entity.dart';
 import 'package:desafio/modules/apod_module/domain/repositories/apod_repository.dart';
 import 'package:desafio/modules/apod_module/infra/datasources/apod_datasource.dart';
 
@@ -9,7 +8,12 @@ class ApodRepositoryImpl implements ApodRepository {
   ApodRepositoryImpl(this._dataSource);
 
   @override
-  Future<Json> getApod(QueryApodEntity query) {
-    return _dataSource.getApod();
+  Future<List<ApodEntity>> getApodList(String query) async {
+    return _dataSource.fetchApodList(query);
+  }
+
+  @override
+  Future<ApodEntity> getApod(String query) async {
+    return _dataSource.fetchApod(query);
   }
 }

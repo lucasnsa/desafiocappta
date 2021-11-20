@@ -1,7 +1,7 @@
-import 'dart:io';
-
 import 'package:http/http.dart';
 
+/// Implementa um Client da lib [http](https://pub.dev/http)
+/// Usada como bypass para hidratar apikey e query
 class CustomHttpClient {
   final Client _httpClient;
 
@@ -13,6 +13,6 @@ class CustomHttpClient {
       'https://api.nasa.gov/planetary/apod?api_key=$_apiKey';
 
   Future<Response> get(String query) {
-    return _httpClient.get(Uri.parse('$_apiEndPoint$query'));
+    return _httpClient.get(Uri.parse('$_apiEndPoint&date=$query'));
   }
 }
